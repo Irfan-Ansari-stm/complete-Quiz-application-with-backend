@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='style3.css')}}">
+
+
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="{{url_for('home')}}" class="active">Home</a>
+  <a href="{{url_for('quiz')}}">Quiz</a>
+  <a href="{{url_for('contact')}}">Contact</a>
+  <a href="{{url_for('about')}}">About</a>
+
+
+  </a>
+</div>
+
+
+
+
+<style>
+.slideshow-container{
+    width: 30%;
+    height: 30%;
+}
+
+
+</style>
+
+
+<br>
+    
+<div class="slideshow-container">
+    
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="{{url_for('static',filename='svcet.jpg')}}" style="width:100%">
+      <div class="text">SVCET,CHITTOOR,AP</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="{{url_for('static',filename='svcet1.jpg')}}"  style="width:100%">
+      <div class="text">SVCET,CHITTOOR,AP</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="{{url_for('static',filename='svcet2.jpg')}}"  style="width:100%">
+      <div class="text">SVCET,CHITTOOR,AP</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="{{url_for('static',filename='svcet4.jpg')}}"  style="width:100%">
+      <div class="text">SVCET,CHITTOOR,AP</div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+    </div>
+
+   <h1><center style="background-color:rgb(177, 232, 13); text-decoration: none;">Our Categoies</center></h1> 
+
+   {% for row in question%}
+   
+   
+   <p class="cat"><a href="{{url_for('quiz')}}">{{row.category}}</a></p>
+
+
+  {% endfor %}
+
+<style>
+.cat{
+  
+  background-color: aquamarine;
+  width: 100%;
+  height: 30px;
+    text-decoration: none;
+    text-align:center;
+    text-decoration-line: none;
+    text-decoration-line: none;
+
+}
+</style>
+
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+</script>
+    
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+
+</html>

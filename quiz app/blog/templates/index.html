@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="..\static\style.css">
+<script type="text/javascript" src="..\static\index.js"></script>
+
+</head>
+<body>
+
+<div class="navbar">
+  <div class="scrollmenu">
+    {% for row in courses %}
+    <a href="#home">{{courses.nav_name}}</a>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+<br>
+<br>
+<center><h1>Intro to Java</h1></center>
+<button class="accordion">What is Java</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Why name Java</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Father of Java</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Father of Java</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+
+
+
+<div class="sidebar">
+  <a href="#home"><i class="fa fa-fw fa-home"></i> intro</a>
+  <hr>
+  <a href="#services"><i class="fa fa-fw fa-wrench"></i> Java</a>
+  <hr>
+  <a href="#clients"><i class="fa fa-fw fa-user"></i> mava</a>
+  <hr>
+
+  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> khava</a>
+  <hr>
+  <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+  <hr>
+  <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
+  <hr>
+  <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+  <hr>
+  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  <hr>
+  <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+  <hr>
+  <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
+  <hr>
+  <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+  <hr>
+  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  <hr>
+  <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
+  <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
+  <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+  <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+</div>
+
+
+
+<footer>
+
+  <h2>Fixed/Sticky Footer Example</h2>
+  <p>The footer is placed at the bottom of the page.</p>
+  <strong>
+    I am your Father
+    and who are you
+  </strong>
+  
+  
+</footer>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+</script>
+
+
+
+</body>
+
+</html>

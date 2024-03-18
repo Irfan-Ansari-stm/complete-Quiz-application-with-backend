@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='style3.css')}}">
+
+
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="{{url_for('home')}}" class="active">Home</a>
+  <a href="{{url_for('quiz')}}">Quiz</a>
+  <a href="{{url_for('contact')}}">Contact</a>
+  <a href="{{url_for('about')}}">About</a>
+  </a>
+</div>
+
+
+<script>
+
+$(document).ready(function(){
+    $("#b1").click(function(){
+        $(".rb").show();
+        $(".rb").attr("disabled",true);
+
+
+    });
+    });
+
+
+
+
+
+
+      function getanswers()
+      {
+      document.getElementById("UserAnswers").innerHTML = "";
+      var e = document.getElementsByTagName("input");
+          for(i = 0 ; i<=e.length;i++)
+          {
+              if(e[i].type=="radio")
+              {
+                  if(e[i].checked)
+                  {
+                      document.getElementById("UserAnswers").innerHTML+="Q )"+e[i].name + " The Answers You Are Selected Is : "+e[i].value+"<br>";
+
+                  }
+              }
+          }
+      }
+  </script>
+
+  
+<div>
+
+  <style>
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+    
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .previous {
+      background-color: #f1f1f1;
+      color: black;
+    }
+    
+    .next {
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    .round {
+      border-radius: 50%;
+    }
+    </style> 
+
+
+
+{% for row in question %}
+
+
+
+<h1>Q ) {{row.question}}</h1>
+<p>Category:{{row.category}}</p><br>
+
+q1 = radio("{{row.question}}",['{{row.a}}',{{row.b}},{{row.c}},{{row.d}},{{row.d}}])
+
+
+<label class="container" for="{{row.a}}">{{row.a}}<input type="radio" id="Optiona" class="rb" name="{{row.id}}" value="{{row.a}}"><span class="checkmark"></span><br></label> <br><br><br>
+<label class="container" for="{{row.b}}">{{row.b}}<input type="radio" id="Optionb" class="rb" name="{{row.id}}" value="{{row.b}}"><span class="checkmark"></span><br></label><br><br><br>
+<label class="container" for="{{row.c}}">{{row.c}}<input type="radio" id="Optionc" class="rb" name="{{row.id}}" value="{{row.c}}"><span class="checkmark"></span><br></label><br><br><br>
+<label class="container" for="{{row.d}}">{{row.d}}<input type="radio" id="Optiond" class="rb" name="{{row.id}}" value="{{row.d}}"><span class="checkmark"></span><br></label><br> <br>
+
+<a href="{{url_for('quiz')}}={{row.d}}" class="previous">&laquo; Previous</a> 
+
+<a href="{{url_for('quiz')}}" class="previous"> Next &raquo;</a> 
+
+
+
+
+<label id="corans" class= "rb" style="color :green;"><b>{{row.correct}}</b></label> <br><br><hr size="5" color="blue">
+
+
+{% endfor %}
+
+
+<input type="submit" class="btn btn-success" value="Submit" id="b1" onclick="getanswers()"> <br><br> 
+<br>
+<b id="UserAnswers"></b> <br>
+
+
+</div>
+
+<h1>Rules and Regulations</h1>
+<ul>
+  <li>You shuold answer within 30 seconds</li>
+  <li>You can select multiple chioce </li>
+ 
+</ul>
+  
+  
+
+
+
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    
+    </body>
+    
+    </html>
+    

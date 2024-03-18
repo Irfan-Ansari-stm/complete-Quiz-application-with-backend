@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block body %}
+
+   
+    
+    <h3>Add post</h3>
+    
+    
+
+        
+    
+    
+    <div class="container">
+
+        <form action="{{url_for('question')}}" method="post">
+
+        <label for="Question">Category</label>
+
+        <input type="text" name="category" id="options" placeholder="Enter a category name">
+        <label for="fname"><h2>Enter the question </h2></label>
+        <input type="text" id="question" name="question" placeholder="Enter the question ">
+
+        <label for="fname"><h2>Upload your file </h2></label>
+
+        <input type="file" id="myFile" name="filename"> <br><br>
+
+        <label for="fname"><h3>Enter the options </h3></label>
+
+        <input type="text" name="optiona" id="options" placeholder="A:">
+        <input type="text" name="optionb" id="options" placeholder="B:">
+        <input type="text" name="optionc" id="options" placeholder="C:">
+        <input type="text" name="optiond" id="options" placeholder="D:">
+        <input type="text" name="correct" id="options" placeholder="Correct ansawer">
+
+        <input type="submit" value="Post">
+
+      </form>
+    </div>
+    
+
+ 
+
+</body>
+</html>
+
+{% endblock %}

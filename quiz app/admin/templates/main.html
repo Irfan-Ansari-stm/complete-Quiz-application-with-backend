@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+<center><h1>Contents</h1></center>
+<table style="width:100%">
+  <tr>
+    <th>Question</th>
+    <th>Correct Answer</th>
+    <th>Category</th>
+  </tr>
+
+{% for row in question %}
+
+  
+  <tr>
+    <td>{{row.question}}</td>
+    <td>{{row.correct}}</td>
+    <td>{{row.category}}</td>
+  </tr>
+
+
+
+{% endfor %}
+</table>
+</body>
+</html>
+
+{% endblock %}

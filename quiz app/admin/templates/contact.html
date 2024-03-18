@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='style3.css')}}">
+
+
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="{{url_for('home')}}" class="active">Home</a>
+  <a href="{{url_for('quiz')}}">Quiz</a>
+  <a href="{{url_for('contact')}}">Contact</a>
+  <a href="{{url_for('about')}}">About</a>
+
+
+  </a>
+</div>
+
+
+
+<h3>Contact us</h3>
+        
+<div class="container">
+
+  
+  <form action="/" method="post">
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="naam" placeholder="Enter your name">
+
+    <label for="fname">Email</label>
+    <input type="text" id="email" name="email" placeholder="Enter your email">
+
+   
+
+    <label for="fname">Subject</label> <br>
+    <input type="text" id="subject" name="subject" placeholder="Write a note" style="height:200px;width: 100%;"> <br>
+
+    <input type="submit" value="Submit">
+
+  </form>
+
+
+</div>f
+
+
+
+    
+    </body>
+    
+    </html>
+    
